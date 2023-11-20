@@ -19,7 +19,11 @@ const Sidebar = () => {
 
   const handleLogout = ()=>{
     dispatch(logoutUser())
-    navigate.push("/")
+
+   
+    window.location.href = '/';
+ 
+    
   }
 
   return (
@@ -61,7 +65,7 @@ const Sidebar = () => {
         </div>
 
         <div className="mt-auto pb-[20px]">
-          <div className="flex flex-row items-center gap-1 text-[18px] cursor-pointer" onClick={handleLogout}>
+          <div className="flex flex-row items-center gap-1 text-[18px] cursor-pointer text-[orangered]" onClick={handleLogout}>
             <CiLogout />
             <span>Log out</span>
           </div>

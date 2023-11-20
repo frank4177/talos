@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Buttonn = styled.button`
   width: 100%;
-  max-width: ${(props) => props.maxwidth}px;
+  max-width: ${(props) => props.$maxwidth}px;
   height: ${(props) => props.height}px;
   border-radius: 7px;
   gap: 2px;
@@ -20,7 +20,7 @@ const Buttonn = styled.button`
 const Button = ({title, loader, loading, height, width, disabled}) => {
   return (
     <>
-      <Buttonn disabled={disabled} maxwidth={width} height={height}>
+      <Buttonn disabled={disabled} $maxwidth={width} height={height}>
         <span>{title}</span> {loading ? loader : null}
       </Buttonn>
     </>
