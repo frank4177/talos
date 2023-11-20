@@ -15,18 +15,18 @@ const Loader = styled.span`
   height: ${(props) => props.width}px;
   border-radius: 50%;
   display: inline-block;
-  border-top: 3px solid #FFF;
+  border-top: ${(props) => `3px solid ${props.color || '#FFF'}`};
   border-right: 3px solid transparent;
   box-sizing: border-box;
   animation: ${rotate} 1s linear infinite;
 `;
 
-const Spinner = ({height, width}) => {
+const Spinner = ({height, width, color}) => {
 
 
   return (
     <>
-      <Loader width={width} height={height}/>
+      <Loader width={width} height={height} color={color}/>
     </>
   );
 };

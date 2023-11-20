@@ -21,7 +21,6 @@ const LoginForm = () => {
     password: "",
   });
 
-  console.log(payload);
 
   const handleChange = (e) => {
     setErrorMessage()
@@ -41,7 +40,7 @@ const LoginForm = () => {
         setErrorMessage("Incrorrect login details")
       }
       if (res?.data?.message === "Login Successful") {
-        dispatch(loginUser("Login Successful"))
+        dispatch(loginUser(payload))
         navigate.push("/dashboard")
       }
       setIsLoading(false);
@@ -84,7 +83,7 @@ const LoginForm = () => {
           />
 
           <p className="text-red-600 text-[14px]">{errorMessage}</p>
-          <Button title="Log in" loader={<Spinner height={20} width={20} />} loading={isLoading}/>
+          <Button title="Log in" height={35} loader={<Spinner height={20} width={20} />} loading={isLoading}/>
 
           <Link href="/register" className="self-center">
             Dont have an account? <span className="text-violet-600 cursor-pointer">Sign Up</span>

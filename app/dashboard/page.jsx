@@ -1,18 +1,16 @@
-
-import React from 'react'
-import { useSelector } from 'react-redux';
-
+import PostList from "@/components/Lists/PostList/PostList";
+import PostWriter from "@/components/PostWriter/PostWriter";
+import React from "react";
 
 const Dashboard = () => {
-    
-
   return (
     <>
-        <div>
-            dashboard
-        </div>
+      <div className="flex flex-col gap-3">
+        <PostWriter />
+        <PostList />
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;

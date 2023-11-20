@@ -82,6 +82,7 @@ const RegisterForm = () => {
             title="Sign Up"
             loader={<Spinner height={20} width={20} />}
             loading={isLoading}
+            height={35}
           />
 
           <Link href="/" className="self-center">

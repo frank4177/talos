@@ -1,22 +1,19 @@
 import { HiOutlineHome } from "react-icons/hi2";
+import { SiWpexplorer } from "react-icons/si";
 
 export const sidebarMenus = [
     {
-      icon: <HiOutlineHome size={30} color="white"/>,
-      title: "Learning",
+      icon: <HiOutlineHome size={30}/>,
+      title: "Home",
       route: "/dashboard",
+      route_name:"dashboard",
       id: Math.random(),
     },
     {
-      icon: <FaLanguage size={30} />,
-      title: "Video Course",
-      route: "/dashboard/video-course",
-      id: Math.random(),
-    },
-    {
-      icon: <FaLanguage size={30} />,
-      title: "Favourites",
-      route: "/dashboard/favourites",
+      icon: <SiWpexplorer size={30} />,
+      title: "Explore",
+      route: "/dashboard/explore",
+      route_name:"explore",
       id: Math.random(),
     },
   ];
