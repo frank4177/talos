@@ -25,8 +25,6 @@ const PostWriter = () => {
     setErrorMessage("")
   }
 
-  console.log(preview)
-
 
   //  WITH BASE64
   const handlePostSubmitWithBase64 = async () => {
@@ -54,7 +52,7 @@ const PostWriter = () => {
     } catch (error) {
       setIsLoading(false);
       if (error?.response?.status === 413) {
-        setErrorMessage("Oops! File too large. Please upload a smaller sized image");
+        setErrorMessage("Oops! 413 (Payload Too Large). Please try a smaller sized image");
       }
       if (error?.response?.status === 502) {
         setErrorMessage("Something went wrong");
@@ -157,7 +155,7 @@ const PostWriter = () => {
 
         {/* UPLOAD PHOTO */}
         <div className="flex flex-row gap-2 mt-[20px] justify-between">
-          <FileUpload label={<PhotoUpload />} setPreview={setPreview} />
+          <FileUpload label={<PhotoUpload />} setPreview={setPreview} setErrorMessage={setErrorMessage}/>
           <Button
             title="Post"
             width={200}

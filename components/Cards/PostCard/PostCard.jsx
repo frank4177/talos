@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import scrn from "../../../public/darkerGre.png";
 import moment from "moment";
 import { GoHeart, GoComment } from "react-icons/go";
 import { IoShareSocialOutline } from "react-icons/io5";
@@ -8,7 +7,7 @@ import { IoShareSocialOutline } from "react-icons/io5";
 const PostCard = ({ data }) => {
   return (
     <>
-      <div className=" rounded-[8px] max-w-[1000px] px-4 py-2 shadow border-[2px]">
+      <div className="rounded-[8px] max-w-[1000px] px-4 py-2 shadow border-[2px]">
         <div className="flex flex-row gap-2 items-center mt-2">
           <div className="rounded-[50%] h-[50px] w-[50px] bg-gray-300 flex flex-row items-center justify-center">
             <span className="font-bold text-[25px]">

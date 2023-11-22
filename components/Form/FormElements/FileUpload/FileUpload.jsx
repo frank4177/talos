@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const FileUpload = ({ label, setPreview }) => {
+const FileUpload = ({ label, setPreview, setErrorMessage }) => {
 
   const handleImageChange = (e) => {
     const selected = e.target?.files[0];
@@ -9,6 +9,7 @@ const FileUpload = ({ label, setPreview }) => {
       let reader = new FileReader();
       reader.onload = () => {
         setPreview(reader.result);
+        setErrorMessage("")
       };
       reader.readAsDataURL(selected);
       // setFile(selected);
