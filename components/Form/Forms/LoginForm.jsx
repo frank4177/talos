@@ -49,6 +49,9 @@ const LoginForm = () => {
       if (error.message === "Netowrk Error") {
         setErrorMessage("Network error")
       }
+      if (error?.name === "AxiosError") {
+        setErrorMessage("Something went wrong. Try again")
+      }
       
       console.log(error);
     }

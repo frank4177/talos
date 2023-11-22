@@ -25,6 +25,8 @@ const PostWriter = () => {
     setErrorMessage("")
   }
 
+  console.log(preview)
+
 
   //  WITH BASE64
   const handlePostSubmitWithBase64 = async () => {
@@ -104,12 +106,12 @@ const PostWriter = () => {
   return (
     <>
       <form
-        className="shadow min-h-[100px] max-w-[1000px] px-4 py-2 rounded-[8px] border-[2px]"
+        className="shadow min-h-[100px] max-w-[1000px] max-[374px]:px-2 px-4 py-2 rounded-[8px] border-[2px]"
         onSubmit={handlePostSubmit}
       >
         <div className="flex flex-row  gap-2 mt-2">
           {/* AVATAR */}
-          <div className="rounded-[50%] h-[50px] w-[50px] bg-gray-300 flex flex-row items-center justify-center">
+          <div className="rounded-[50%] h-[50px] w-[50px] max-[374px]:hidden bg-gray-300 flex flex-row items-center justify-center">
             <span className="font-bold text-[25px]">
               {userData?.username.split("")[0]}
             </span>

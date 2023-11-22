@@ -25,7 +25,7 @@ const PostCard = ({ data }) => {
 
         <p className="mt-[15px]">{data.post}</p>
 
-        {data.base64str ? <Image src={data?.base64str} alt="image" /> : null}
+        {data.base64str ? <Image src={data?.base64str} alt="image" width={400} height={400}/> : null}
 
         <div className="flex flex-row gap-6 items-center mt-[25px]">
           <GoHeart size={20}/>

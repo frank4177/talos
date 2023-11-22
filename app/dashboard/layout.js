@@ -1,4 +1,5 @@
 import AuthProvider from "@/Providers/AuthProvider";
+import Navbar from "@/components/Navbar/Navbar";
 import Sidebar from "@/components/Sidebar/Sidebar";
 
 export const metadata = {
@@ -11,10 +12,11 @@ export default function DashboardLayout({ children }) {
     <>
       <AuthProvider>
         <div className="flex flex-row">
-        <div className='w-[15%]  shadow  min-h-[100vh] '>
-        <Sidebar/>
-        </div>
-          <div className="w-[80%]  px-[50px]  py-[50px]">{children}</div>
+          <Sidebar />
+          <div className="w-[85%] max-[1200px]:w-[100%] box-border">
+            <Navbar />
+            <div className=" p-[50px] max-[1200px]:p-[10px]">{children}</div>
+          </div>
         </div>
       </AuthProvider>
     </>

@@ -6,12 +6,13 @@ import { request } from "@/config/config";
 import Button from "@/components/shared/Buttons/Button";
 import Spinner from "@/components/shared/Loaders/Spinner";
 import Link from "next/link";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 import { useRouter } from "next/navigation";
 
 const RegisterForm = () => {
-  const navigate = useRouter("")
+  const navigate = useRouter("");
   const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [payload, setPayload] = useState({
     username: "",
     password: "",
@@ -31,21 +32,24 @@ const RegisterForm = () => {
     setIsLoading(true);
     if (payload.username && payload.password) {
       try {
-        const res = await request.post(`/register`,  payload );
+        const res = await request.post(`/register`, payload);
         console.log(res);
         setIsLoading(false);
-        Swal.fire({   
-          title: 'Success',
-          icon: 'success',
+        Swal.fire({
+          title: "Success",
+          icon: "success",
           allowOutsideClick: false,
-          confirmButtonText: 'Login'
+          confirmButtonText: "Login",
         }).then((result) => {
           if (result.isConfirmed) {
-            navigate.push("/")
+            navigate.push("/");
           }
-        })
+        });
       } catch (error) {
         setIsLoading(false);
+        if (error?.name === "AxiosError") {
+          setErrorMessage("Something went wrong. Try with a unique username")
+        }
         console.log(error);
       }
     }
@@ -78,6 +82,8 @@ const RegisterForm = () => {
             name="password"
             handleChange={handleChange}
           />
+
+          <p className="text-red-600 text-[14px]">{errorMessage}</p>
           <Button
             title="Sign Up"
             loader={<Spinner height={20} width={20} />}
